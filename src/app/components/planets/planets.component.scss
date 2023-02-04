@@ -1,0 +1,124 @@
+$header-color: #a8606a;
+$valid-status: #b2ff91;
+$invalid-status: #a8606a;
+$no-status: #c0c2c1;
+$description-color: #969697;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.page-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+
+    .header-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        background-color: $header-color;
+    
+        .header-title{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+        }
+    }
+
+    .list-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    
+
+        .planet-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border: 1px solid rgb(227, 227, 227);
+            width: 90%;
+            height: 100px;
+            margin: 5px;
+
+            .image-container, 
+            .description-container,
+            .status-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: Arial, Helvetica, sans-serif;
+
+            }
+
+            .image-container {
+                width: 25%;
+
+                .name-label{
+                    font-size:8px;
+                    font-weight: bold;
+                    margin-top: 4px;
+                }
+
+                .terra-image{
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+
+            .description-container{
+                align-items: start;
+                width: 50%;
+
+                .description-label {
+                    font-size:10px;
+                    color: $description-color;
+                }
+
+                .captain-container{ 
+                    font-size: 8px;
+
+                    .by-captain-label {
+                        font-weight: bold;
+                        
+                    }
+                }
+
+                .robots-container {
+                    font-size: 8px;
+
+                    .robots-label {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .status-container{
+                width: 25%;
+
+                .status-label {
+                    font-size: 12px;
+                }
+
+                .green {
+                    color: $valid-status;
+                }
+
+                .red {
+                    color: $invalid-status;
+                }
+
+                .gray {
+                    color: $no-status;
+                }
+            }
+        }
+    }
+}

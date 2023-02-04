@@ -1,0 +1,57 @@
+<div class="page-container">
+    <div class="header-container">
+        <span class="header-title">
+            XPAND
+        </span>
+    </div>
+    <div class="list-container">
+        <div class="planet-card" 
+             *ngFor="let planet of planets">
+            <div class="image-container">
+                <img class="terra-image" 
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/The_Blue_Marble_%28remastered%29.jpg/300px-The_Blue_Marble_%28remastered%29.jpg">
+                <span class="name-label">
+                    {{planet.name | uppercase}}
+                </span>
+            </div>
+            <div class="description-container">
+                <div *ngIf="planet.description&&planet.teamDto">
+                    <span class="description-label">
+                        "{{planet.description}}"
+                    </span>
+                    <div class="captain-container">
+                        <span class="by-captain-label">
+                            By captain: 
+                        </span>
+                        <span class="captain-label">
+                            {{planet.teamDto.captain.name}}
+                        </span>
+                    </div>
+                    <div class="robots-container">
+                        <span class="robots-label">
+                            Robots:
+                        </span>
+                        <span *ngFor="let robot of planet.teamDto.robots">
+                            {{robot.name }}
+                        </span>
+                    </div>
+                </div>
+                
+                <span *ngIf="!planet.description"
+                      class="description-label">
+                    No description yet :/
+                </span>
+            </div>
+            <div class="status-container">
+                <span class="status-label"
+                      [ngClass]="{
+                        'green' : planet.status == 'OK',
+                        'red' : planet.status == '!OK',
+                        'gray' : planet.status == 'En route'
+                    }">
+                    {{planet.status}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
