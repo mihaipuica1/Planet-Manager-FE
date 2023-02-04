@@ -119,6 +119,13 @@ $description-color: #969697;
                     color: $no-status;
                 }
             }
+
+            .input-group {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 70%;
+            }
         }
     }
 }
